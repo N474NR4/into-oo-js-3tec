@@ -11,3 +11,7 @@ const user = {
 
 user.exibirInfos()
 
+const exibir = function(){
+  console.log(this)
+}
+exibir()
