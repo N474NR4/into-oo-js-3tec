@@ -1,17 +1,23 @@
 const user = {
-  nome: "Natan",
-  email: "n@@g.com", 
+  nome: "natan",
+  email: "n@g.com",
   nascimento: "2009/01/01",
-  role: "admin",
+  role: "estudante",
   ativo: true,
   exibirInfos: function() {
     console.log(this.nome, this.email)
   }
 }
 
-user.exibirInfos()
-
-const exibir = function(){
-  console.log(this)
+const admin = {
+  nome: "junior",
+  email: "j@h.com",
+  role: "admin",
+  criarCurso() {
+    console.log('curso criado!')
+  }
 }
-exibir()
+
+Object.setPrototypeOf(admin, user)
+admin.criarCurso()
+admin.exibirInfos()
